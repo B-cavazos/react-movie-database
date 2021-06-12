@@ -1,0 +1,71 @@
+body{
+min-height: 95vh;
+max-height: 350vh;
+background: rgb(125,224,232);
+background: linear-gradient(0deg, rgba(125,224,232,1) 41%, rgba(131,214,220,1) 57%, rgba(62,176,205,1) 89%);
+  color: #f1fcff;
+}
+
+#movie-header{
+  background-image: url(./imgs/bokeh.jpg);
+  height: 100px;
+}
+
+.favpop{
+  z-index: 10;
+  margin:0;
+  position: fixed;
+  top:0;
+  height:60px;
+}
+
+/* (row) SCROLL BAR */
+.row::-webkit-scrollbar {
+  height: 8px;
+}
+/* Handle */
+.row::-webkit-scrollbar-thumb {
+  background: #e5fcfc;  
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.row::-webkit-scrollbar-thumb:hover {
+  background: #52b1b9; 
+}
+
+/* all rows within movie-app */
+.movie-app > .row {
+  flex-wrap: nowrap;
+	overflow-x: auto;
+}
+
+
+
+.image-container {
+  width: auto;
+  max-height: 425px;
+	position: relative;
+	transition: transform 0.2s;
+}
+
+.image-container:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay{
+  opacity: 1;
+}
+
+.overlay{
+  position: absolute;
+  background: rgba(0,0,0,.8);
+  width: 92.5%;
+  transition: .5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
