@@ -70,6 +70,7 @@ const App = () => {
 
   /* JSX */
   return (
+    /* alert */
     <div id="notification" className="container-fluid">
       {
         faveToggle ? <div className="row text-center">
@@ -77,6 +78,7 @@ const App = () => {
         </div> 
         :<div></div>
       }
+      {/* hero */}
       <div className="row">
         <Header/>
       </div>
@@ -85,25 +87,39 @@ const App = () => {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>      
       <div className="container movie-app">
+        {/* movie list */}
         <div className="row py-4">
-          <MovieList 
-            movies={movies} 
-            favoriteComponent={AddFavorites}
-            handleFavorites={addFavoriteMovie} 
-          />      
+          
+          {
+          movies.length === 0 ? <div className="row text-center">
+            <p>Search results will appear here</p>
+          </div> 
+          :<MovieList 
+          movies={movies} 
+          favoriteComponent={AddFavorites}
+          handleFavorites={addFavoriteMovie} 
+          />
+         }
+  
         </div>        
       </div>
 
       <div className="row my-2 pt-5">
         <MovieListHeading heading='Favorites'/>
       </div>
+      {/* favorites list */}
       <div className="container movie-app">
         <div className="row mb-5 py-4">
-          <MovieList 
+          {
+            faves.length === 0 ? <div className="row text-center">
+              <p>No movies have been added to your favorites list</p>
+            </div> 
+            :<MovieList 
             movies={faves} 
             favoriteComponent={RemoveFavorites}
             handleFavorites={removeFavoriteMovie} 
-          />      
+            />
+          }   
         </div>
       </div>
     </div>
