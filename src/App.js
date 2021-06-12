@@ -70,6 +70,7 @@ const App = () => {
 
   /* JSX */
   return (
+    /* alert */
     <div id="notification" className="container-fluid">
       {
         faveToggle ? <div className="row text-center">
@@ -77,6 +78,7 @@ const App = () => {
         </div> 
         :<div></div>
       }
+      {/* hero */}
       <div className="row">
         <Header/>
       </div>
@@ -85,6 +87,7 @@ const App = () => {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>      
       <div className="container movie-app">
+        {/* movie list */}
         <div className="row py-4">
           <MovieList 
             movies={movies} 
@@ -97,6 +100,7 @@ const App = () => {
       <div className="row my-2 pt-5">
         <MovieListHeading heading='Favorites'/>
       </div>
+      {/* favorites list */}
       <div className="container movie-app">
         <div className="row mb-5 py-4">
           <MovieList 
