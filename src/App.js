@@ -89,11 +89,18 @@ const App = () => {
       <div className="container movie-app">
         {/* movie list */}
         <div className="row py-4">
-          <MovieList 
-            movies={movies} 
-            favoriteComponent={AddFavorites}
-            handleFavorites={addFavoriteMovie} 
-          />      
+          
+          {
+          movies.length === 0 ? <div className="row text-center">
+            <p>Search results will appear here</p>
+          </div> 
+          :<MovieList 
+          movies={movies} 
+          favoriteComponent={AddFavorites}
+          handleFavorites={addFavoriteMovie} 
+          />
+         }
+  
         </div>        
       </div>
 
@@ -103,11 +110,16 @@ const App = () => {
       {/* favorites list */}
       <div className="container movie-app">
         <div className="row mb-5 py-4">
-          <MovieList 
+          {
+            faves.length === 0 ? <div className="row text-center">
+              <p>No movies have been added to your favorites list</p>
+            </div> 
+            :<MovieList 
             movies={faves} 
             favoriteComponent={RemoveFavorites}
             handleFavorites={removeFavoriteMovie} 
-          />      
+            />
+          }   
         </div>
       </div>
     </div>
